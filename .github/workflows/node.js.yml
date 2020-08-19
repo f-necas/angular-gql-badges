@@ -1,23 +1,35 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Build and Deploy
+name: Node.js CI
+
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-    - uses: actions/checkout@v2
-    - name: All things angular
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions@1.3.1
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2.3.1 
       with:
-        github_access_token: ${{ secrets.ACCESS_TOKEN }}
-        build_configuration: production 
-        base_href: /angular-gql-badges/   
-        deploy_branch: gh-pages 
-        angular_dist_build_folder: dist/angular-gql-badges
+        persist-credentials: false
+    - name: Install and Build 
+      run: |
+          npm install
+          npm run ng -- build --base-href /angular-gql-badges --prod
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages 
+        FOLDER: dist/angular-graphql
