@@ -1,0 +1,28 @@
+<div>
+    
+</div>
+
+<div>
+    <div>
+        <select [(ngModel)]="userId">
+            <option  [value]="i.id" *ngFor="let i of users | async">{{i.username}}</option>
+        </select>
+    </div>
+
+    <br>
+
+    <input type="text" [(ngModel)]="name">
+
+    <div>
+        <label for="filePicker">Choose or drag a file:</label><br>
+        <input type="file" id="filePicker" (change)="handleFileSelect($event)">
+    </div>
+    <br>
+    <div>
+        <h1>Base64 encoded version</h1>
+        <img src="{{base64textString}}">
+    </div>
+    <div>
+        <button type="button" (click)='addBadgeToUser()'>hey</button>
+    </div>
+</div>

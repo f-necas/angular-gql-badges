@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #790000;
+    padding: 10px 20px;
+    border-bottom: 1px solid #d3d3d3;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar > a{
+    &.active{
+        color: white;
+    }
+    color: #eea1a1;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-decoration: none;
+}

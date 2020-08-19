@@ -1,0 +1,62 @@
+.userList {
+    width: 100vw;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.d-ib {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.userRow {
+    border-bottom: 1px solid #d3d3d3;
+    height: 75px;
+    width: 100vw;
+}
+.userName {
+    width: 150px;
+    border-right: 1px solid #d3d3d3;
+    height: 100%;
+    text-align: center;
+    & > span {
+        height: 75px;
+        line-height: 75px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+img {
+    margin: auto 10px;
+    line-height: 75px;
+}
+.badgeImg {
+    display: inline-block;
+}
+.badgeImg.two > img {
+    filter: saturate(0);
+}
+
+.badgeImg.three > img {
+    filter: hue-rotate(100);
+}
+
+.badges {
+    width: calc(100vw - 151px);
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.badges::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.badges {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}

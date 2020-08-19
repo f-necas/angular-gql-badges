@@ -1,0 +1,18 @@
+<div class="content " role="main">
+    <ul class="usersList">
+        <li class="userRow" *ngFor="let user of users | async">
+            <div class="d-ib userName">
+                <span class="center-text">
+                    {{user.username}}
+                </span>
+            
+            </div>
+            <div class="d-ib badges" (wheel)="onWheel($event)">
+                <div class="badgeImg" *ngFor="let badge of user.badges" (wheel)="onWheelp($event)">
+                    <img width="75" src="{{badge.image_b64}}" alt="{{badge.name}}">
+                </div>
+            </div>
+            
+        </li>
+    </ul>
+</div>
