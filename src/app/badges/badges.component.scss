@@ -31,22 +31,26 @@ ul {
 
 .badgeImg {
     display: inline-block;
-    height: 100%;
     position: relative;
+    height: 75px;
+    width: 75px;
 }
 
 .badge {
     position: absolute;
-    margin: auto 10px;
+    margin: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     height: 45px;
+    width: 45px;
     padding: 10px;
-    border: 1px dotted salmon;
-    box-shadow: inset 0px 0px 10px 2px salmon, 0px 0px 2px 2px #e7e7e7;
+    border: 1px solid rgb(184, 184, 184);
+    box-shadow: inset 0px 0px 8px 2px rgb(219, 219, 219), 0px 0px 2px 2px #e7e7e7;
     border-radius: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
     
 }
 
