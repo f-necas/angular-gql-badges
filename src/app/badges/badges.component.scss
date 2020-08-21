@@ -28,19 +28,26 @@ ul {
         text-align: center;
     }
 }
-img {
-    margin: auto 10px;
-    line-height: 75px;
-}
+
 .badgeImg {
     display: inline-block;
-}
-.badgeImg.two > img {
-    filter: saturate(0);
+    height: 100%;
+    position: relative;
 }
 
-.badgeImg.three > img {
-    filter: hue-rotate(100);
+.badge {
+    position: absolute;
+    margin: auto 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 45px;
+    padding: 10px;
+    border: 1px dotted salmon;
+    box-shadow: 0px 0px 3px 2px salmon;
+    border-radius: 100%;
+    
 }
 
 .badges {

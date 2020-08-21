@@ -13,6 +13,7 @@ import { AddBadgeGQL } from '../graphql/admin-gql.service';
 export class AdminComponent implements OnInit {
 
     users: Observable<User[]>;
+    username: string;
     name: string;
     userId: number;
     base64textString: string = "";
@@ -43,10 +44,7 @@ export class AdminComponent implements OnInit {
     }
 
     addBadgeToUser() {
-        console.log('this.userId ' + this.userId);
-        console.log('this.name ' + this.name);
-        console.log('this.base64textString ' + this.base64textString);
-
+        
         if (!!this.userId && !!this.name && !!this.base64textString) {
             this.addBadge
                 .mutate({
@@ -55,6 +53,18 @@ export class AdminComponent implements OnInit {
                     image_b64: this.base64textString,
                 })
                 .subscribe();
+        } else {
+            console.log("one is empty");
+            
+        }
+
+    }
+
+    addUser() {
+        
+        if (!!this.username) {
+           console.log(this.username);
+           
         } else {
             console.log("one is empty");
             

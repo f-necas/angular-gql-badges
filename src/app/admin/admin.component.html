@@ -1,28 +1,31 @@
-<div>
-    
-</div>
+<div class="d-flex">
+    <div class="card">
+        <h4>Add a new user</h4>
 
-<div>
-    <div>
-        <select [(ngModel)]="userId">
+        <label for="usernameInput">Username</label>
+        <input type="text" [(ngModel)]="username" id="usernameInput" class="form-control" disabled>
+
+        <button type="button" class="btn" (click)='addUser()' disabled>Add user</button>
+    </div>
+    <div class="card">
+        <h4>Add a new badge</h4>
+
+        <label for="userBadge">User</label>
+        <select [(ngModel)]="userId" id="userBadge" class="form-control">
             <option  [value]="i.id" *ngFor="let i of users | async">{{i.username}}</option>
         </select>
-    </div>
 
-    <br>
+        <label for="imgAlt">Alt text</label>
+        <input type="text" [(ngModel)]="name" id="imgAlt" class="form-control">
 
-    <input type="text" [(ngModel)]="name">
+        <label for="filePicker">Choose or drag a file:</label>
+        <input type="file" id="filePicker" (change)="handleFileSelect($event)" >
 
-    <div>
-        <label for="filePicker">Choose or drag a file:</label><br>
-        <input type="file" id="filePicker" (change)="handleFileSelect($event)">
-    </div>
-    <br>
-    <div>
-        <h1>Base64 encoded version</h1>
-        <img src="{{base64textString}}">
-    </div>
-    <div>
-        <button type="button" (click)='addBadgeToUser()'>hey</button>
+        <div style="margin: 5px 0;">
+            <img src="{{base64textString}}" style="display: block;margin: 0 auto;">
+        </div>
+        
+
+        <button type="button" class="btn" (click)='addBadgeToUser()'>Add badge</button>
     </div>
 </div>

@@ -9,7 +9,7 @@
             </div>
             <div class="d-ib badges" (wheel)="onWheel($event)">
                 <div class="badgeImg" *ngFor="let badge of user.badges" (wheel)="onWheelp($event)">
-                    <img width="75" src="{{badge.image_b64}}" alt="{{badge.name}}">
+                    <img class="badge" src="{{badge.image_b64}}" alt="{{badge.name}}">
                 </div>
             </div>
             
