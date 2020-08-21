@@ -26,7 +26,7 @@ jobs:
     - name: Install and Build 
       run: |
           npm install
-          npm run ng -- build --base-href /angular-gql-badges --prod
+          npm run ng -- build --base-href /angular-gql-badges/ --prod
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.5.9
       with:
