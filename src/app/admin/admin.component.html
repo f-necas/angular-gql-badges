@@ -1,5 +1,5 @@
 <div class="d-flex">
-    <div class="card">
+    <div class="card" style="display: none;">
         <h4>Add a new user</h4>
 
         <label for="usernameInput">Username</label>
@@ -17,6 +17,13 @@
 
         <label for="imgAlt">Alt text</label>
         <input type="text" [(ngModel)]="name" id="imgAlt" class="form-control">
+
+        <label for="levelSelect">Level</label>
+        <select name="level" id="levelSelect" [(ngModel)]="level" class="form-control">
+            <option value="bronze">Bronze</option>
+            <option value="silver">Silver</option>
+            <option value="gold">Gold</option>
+        </select>
 
         <label for="filePicker">Choose or drag a file:</label>
         <input type="file" id="filePicker" (change)="handleFileSelect($event)" >

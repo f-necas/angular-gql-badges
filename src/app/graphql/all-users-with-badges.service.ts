@@ -31,6 +31,7 @@ export class AllUsersWithBadgesService extends Query<Response> {
             badges {
                 name
                 image_b64
+                level
             }
         }
       }

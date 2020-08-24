@@ -15,6 +15,7 @@ export class AdminComponent implements OnInit {
     users: Observable<User[]>;
     username: string;
     name: string;
+    level: string = 'bronze';
     userId: number;
     base64textString: string = "";
 
@@ -51,8 +52,15 @@ export class AdminComponent implements OnInit {
                     userId: this.userId,
                     name: this.name,
                     image_b64: this.base64textString,
+                    level: this.level,
                 })
-                .subscribe();
+                .subscribe((res) => {
+                    if (!!res['data']['insert_badges']['returning'][0].id){
+                        this.base64textString = '';
+                        this.name = undefined;
+                    }
+                    
+                });
         } else {
             console.log("one is empty");
             
