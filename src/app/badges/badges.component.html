@@ -10,6 +10,7 @@
             <div class="d-ib badges" (wheel)="onWheel($event)">
                 <div class="badgeImg" *ngFor="let badge of user.badges" (wheel)="onWheelp($event)">
                     <img class="badge {{badge.level}}" src="{{badge.image_b64}}" alt="{{badge.name}}">
+                    <span class="tooltiptext">{{badge.name}}</span>
                 </div>
             </div>
         </li>

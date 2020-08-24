@@ -49,15 +49,15 @@ ul {
     border-radius: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    &.bronze{
+    &.bronze {
         border: 1px solid hsl(36, 33%, 31%);
         box-shadow: inset 0px 0px 8px 2px #79613d, 0px 0px 2px 2px #79613d;
     }
-    &.silver{
+    &.silver {
         border: 1px solid hsl(0, 0%, 76%);
-        box-shadow: inset 0px 0px 8px 2px #CECECE, 0px 0px 2px 2px #CECECE;
+        box-shadow: inset 0px 0px 8px 2px #cecece, 0px 0px 2px 2px #cecece;
     }
-    &.gold{
+    &.gold {
         border: 1px solid hsl(51, 100%, 45%);
         box-shadow: inset 0px 0px 8px 2px #ffc400, 0px 0px 2px 2px #ffc400;
     }
@@ -79,4 +79,24 @@ ul {
 .badges {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+}
+.badgeImg .tooltiptext {
+    visibility: hidden;
+    width: 75px;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 0.6rem;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    left: 80%;
+    margin-left: -60px;
+}
+
+.badgeImg:hover .tooltiptext {
+    visibility: visible;
 }
