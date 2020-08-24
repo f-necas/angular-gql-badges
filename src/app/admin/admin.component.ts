@@ -18,6 +18,7 @@ export class AdminComponent implements OnInit {
     level: string = 'bronze';
     userId: number;
     base64textString: string = "";
+    error: string[] = [];
 
     constructor(private allUsers: AllUsers, private addBadge: AddBadgeGQL) { }
 
@@ -45,8 +46,15 @@ export class AdminComponent implements OnInit {
     }
 
     addBadgeToUser() {
-        
-        if (!!this.userId && !!this.name && !!this.base64textString) {
+
+        if (!this.userId) this.error.push(' user');
+        if (!this.name) this.error.push(' alt');
+        if (!this.level) this.error.push(' level');
+        if (!this.base64textString) this.error.push(' image');
+
+        console.log(this.error);
+
+        if (this.error == undefined) {
             this.addBadge
                 .mutate({
                     userId: this.userId,
@@ -58,13 +66,11 @@ export class AdminComponent implements OnInit {
                     if (!!res['data']['insert_badges']['returning'][0].id){
                         this.base64textString = '';
                         this.name = undefined;
+                        this.error = [];
                     }
                     
                 });
-        } else {
-            console.log("one is empty");
-            
-        }
+        } 
 
     }
 

@@ -10,6 +10,10 @@
     <div class="card">
         <h4>Add a new badge</h4>
 
+        <div class="error" *ngIf="error.length != 0">
+            {{error}}
+        </div>
+
         <label for="userBadge">User</label>
         <select [(ngModel)]="userId" id="userBadge" class="form-control">
             <option  [value]="i.id" *ngFor="let i of users | async">{{i.username}}</option>
