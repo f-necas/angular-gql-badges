@@ -47,14 +47,13 @@ export class AdminComponent implements OnInit {
 
     addBadgeToUser() {
 
+        this.error = []
         if (!this.userId) this.error.push(' user');
         if (!this.name) this.error.push(' alt');
         if (!this.level) this.error.push(' level');
         if (!this.base64textString) this.error.push(' image');
 
-        console.log(this.error);
-
-        if (this.error == undefined) {
+        if (this.error.length == 0) {
             this.addBadge
                 .mutate({
                     userId: this.userId,
